@@ -21,25 +21,28 @@ def addMetrics(currTup, choiceTup):
             currTup[3]+choiceTup[3])
 
 def win():
-    delay_print("You have won...",0.3)
+    delay_print("\nYou have won...",0.3)
 
 def lose():
-    delay_print("You have lost...",0.3)
+    delay_print("\nYou have lost...",0.3)
 
 # Structured as
 # OPTION : (Animal, Wealth, Peace, Humans)
 prompts = {
-    "Kill all dogs?" : (-10,2,-1,-1),
-    "Kill all cats?" : (-10,2,-1,-1)
+    "Kill all dogs?"                    : (-10,2,-1,-1),
+    "Kill all cats?"                    : (-10,2,-1,-1),
+    "Give subsidy for owning pets?"     : (5,-2,0,1),
 }
 
 metrics = (10,10,10,10)
 maxMetrics = (20,20,20,20)
 
 playing = True
+days = 0
 while(playing):
-    
-    print(metrics)
+    days += 1
+    print(f'|------------------ day {days} ---------------------|')
+    print(f'Current Levels:\nAnimals {metrics[0]}   Wealth {metrics[1]}   Peace {metrics[2]}   Humans {metrics[3]}\n')
 
     if not prompts:
         win()
