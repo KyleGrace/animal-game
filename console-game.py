@@ -59,6 +59,7 @@ while(playing):
 
         for met in metrics:
             if met <= 0:
+                delay_print(f'\nLevels:\nAnimals {metrics[0]}   Wealth {metrics[1]}   Peace {metrics[2]}   Humans {metrics[3]}\n',0.05)
                 lose()
                 playing=False
     
