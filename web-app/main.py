@@ -1,10 +1,16 @@
 from flask import Flask
-from flask import request
+from flask import request, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
+    return(
+        render_template("index.html")
+    )
+
+@app.route("/temp")
+def temp():
     celsius = request.args.get("celsius","")
     if celsius:
         fahrenheit = fahrenheit_from(celsius)
