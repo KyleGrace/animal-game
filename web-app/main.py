@@ -1,11 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import random
+import json
 
 app = Flask(__name__)
 
 votes = 0
 
-game_metric=[10,10]
+animal_metric = 15
+human_metric = 15
 
 prompts = {
     "kill all animals": (-10, -9),
@@ -21,48 +23,45 @@ del prompts[game_prompt]
 
 @app.route("/")
 def index():
-    return render_template("index.html", votes=votes, game_metric=game_metric,game_prompt=game_prompt)
-
-@app.route("/up", methods=["POST"])
-def upvote():
-    global votes
-    votes = votes + 1
-    return str(votes)
-
-@app.route("/down", methods=["POST"])
-def downvote():
-    global votes
-    if votes >= 1:
-        votes = votes - 1
-    return str(votes)
-
-
+    return render_template("index.html", animal_metric = animal_metric, human_metric = human_metric, game_prompt=game_prompt)
 
 @app.route("/yes", methods=["POST"])
 def optionyes():
-    global game_metric
-    # global animal_metric
-    # global human_metric
+    global animal_metric
+    global human_metric
     global game_prompt
     global prompts
     global animal_change
     global human_change
 
-    # animal_change, human_change = prompts[game_prompt]
-    game_metric[0] += animal_change
-    game_metric[1] += human_change
-    # animal_metric += animal_change
-    # human_metric += human_change
-    # del prompts[game_prompt]
+    animal_metric += animal_change
+    human_metric += human_change
 
     game_prompt = random.choice(list(keys))
     animal_change, human_change = prompts[game_prompt]
     del prompts[game_prompt]
 
-    return str(game_metric)
+    response_string = str(animal_metric) + "#" + str(human_metric) + "#" + game_prompt
+    return response_string
 
-# @app.route("/no", methods=["POST"])
-# def optionno():
+@app.route("/no", methods=["POST"])
+def optionno():
+    global animal_metric
+    global human_metric
+    global game_prompt
+    global prompts
+    global animal_change
+    global human_change
+
+    animal_metric += 0
+    human_metric += 0
+
+    game_prompt = random.choice(list(keys))
+    animal_change, human_change = prompts[game_prompt]
+    del prompts[game_prompt]
+
+    response_string = str(animal_metric) + "#" + str(human_metric) + "#" + game_prompt
+    return response_string
     
 
 # # Used to test locally

@@ -8,24 +8,15 @@
 
     
     <body>
-        <!-- Votes example -->
-        Votes: <span id="count">{{ votes }}</span>
-        <br><br>
-        <button id="up">UP</button>
-        <br>
-        <button id="down">DOWN</button>
-        <hr>
-
         <!-- animal game demo -->
         Metric:
         <div id="prompt">{{ game_prompt }}</div>
         <br>
-        metrics: <span id="metrics">{{game_metric}}</span>
-        <!-- <br>
+        <br>
         animal metric: <span id="animal">{{ animal_metric }}</span>
         <br>
         human metric: <span id="human">{{ human_metric }}</span>
-        <br> -->
+        <br>
         <button id="yes">YES</button>
         <br>
         <button id="no">NO</button>
@@ -40,13 +31,17 @@
                     request.onload = () => {
                         const response = request.responseText;
 
-                        if (button.id == "up" | button.id == "down") {
-                            document.getElementById('count').innerHTML = response;
-                        }
-                        else if (button.id == "yes" | button.id == "no") {
+                        if (button.id == "yes" | button.id == "no") {
                             if (button.id == "yes") {
-                                document.getElementById('metrics').innerHTML = response;
-                                // document.getElementById('human').innerHTML = response[1];
+
+                                let results = response.split("#");
+                                let new_animal_metric = results[0];
+                                let new_human_metric = results[1];
+                                let new_prompt = results[2];
+
+                                document.getElementById('animal').innerHTML = new_animal_metric;
+                                document.getElementById('human').innerHTML = new_human_metric;
+                                document.getElementById('prompt').innerHTML = new_prompt;
                             }
                             
                         }
