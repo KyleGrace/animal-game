@@ -3,8 +3,8 @@ from flask import session
 from prompts import *
 
 def initializeSession():
-    session['animal_metric'] = 15
-    session['human_metric'] = 15
+    session['animal_metric'] = 10
+    session['human_metric'] = 10
 
     prompts = starterPrompts
 
@@ -18,7 +18,9 @@ def initializeSession():
 def yesSession():
     game_prompt=session['game_prompt']
     prompts = session['prompts']
-    animal_change,human_change = prompts[game_prompt]
+
+    yesChange = prompts[game_prompt][0]
+    animal_change, human_change = yesChange
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
@@ -37,10 +39,12 @@ def yesSession():
 def noSession():
     game_prompt=session['game_prompt']
     prompts = session['prompts']
-    animal_change,human_change = prompts[game_prompt]
 
-    session['animal_metric'] += 0
-    session['human_metric'] += 0
+    noChange = prompts[game_prompt][1]
+    animal_change, human_change = noChange
+
+    session['animal_metric'] += animal_change
+    session['human_metric'] += human_change
 
     prompts.pop(game_prompt)
 

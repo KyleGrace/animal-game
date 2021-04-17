@@ -1,21 +1,72 @@
-<style>
-    body {
-        background-color: black;
-        font-family:'VT323';
-        color:white;
-        font-size:2em;
-    }
-</style>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    WELCOME TO THE GAME
-    <br>
+        <title> Kingdom</title>
+    </head>
 
-    <button id='start' onclick='play_game()'>BEGIN THE GAME</button>
-    <script>
-        function play_game() {
-            window.location.href = "/game"
+    <!-- CSS -->
+    <style>
+        body {
+            background-color: black;
+            font-family:'VT323';
+            color:white;
+            font-size:2em;
+            text-align: center;
         }
-    </script>
-</body>
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        #start-text:hover {
+            animation: blink 0.8s linear infinite;
+        }
+
+        @keyframes blink {
+            0%,50% {
+                opacity: 0.5;
+            }
+            51%,100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    
+    <body>
+        <div class="center">
+
+            <div style="font-size: 1.5em">
+                WELCOME TO KINGDOM
+            </div>
+            
+            <div>
+                You are a Monarch. Take or reject advice from various figures to ensure the survival of your kingdom.
+            </div>
+
+            <br>
+        
+            <button id='start' onclick='play_game()'><span id="start-text">BEGIN THE GAME</span></button>
+        </div>
+        
+        <script>
+            function play_game() {
+                window.location.href = "/game"
+            }
+        </script>
+    </body>
+
+</html>

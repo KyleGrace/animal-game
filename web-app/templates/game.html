@@ -6,7 +6,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Kingdom</title>
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <title> Kingdom </title>
     </head>
 
     <style>
@@ -15,24 +22,57 @@
             font-family:'VT323';
             color:white;
             font-size:2em;
+            text-align: center;
         }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .yes-no-button{
+            width: 3em
+        }
+
+        #prompt-outline{
+            border: 1px solid white;
+            margin: 1em;
+            padding: 1em;
+            min-height: 40vh;
+            min-width: 50vw;
+        }
+
     </style>
 
     <body>
-        <!-- animal game demo -->
-        <h2>Current Suggestion:</h2>
-        <div id="prompt">{{ session['game_prompt'] }}</div>
-        <br>
-        <br>
-        <h3>Status of the community:</h3>
-        <br>
-        Non-Human Animal Happiness: <span id="animal">{{ session['animal_metric'] }}</span>
-        <br>
-        Human Animal Happiness: <span id="human">{{ session['human_metric'] }}</span>
-        <br>
-        <button id="yes">YES</button>
-        <br>
-        <button id="no">NO</button>
+        <div class="center">
+            
+
+            <!-- Metrics -->
+            <div style="text-align: left; font-size: 0.8em">
+                Current Non-Human Animal Happiness: <span id="animal">{{ session['animal_metric'] }}</span>
+                <br>
+                Current Human Animal Happiness: <span id="human">{{ session['human_metric'] }}</span>
+            </div>
+
+            <!-- Prompt -->
+            <div id="prompt-outline">
+                <div style="font-size: 1.5em">Current Suggestion:</div>
+                <div id="prompt-box">
+                    <div id="prompt">{{ session['game_prompt'] }}</div>
+                </div>
+            </div>
+            
+            <!-- buttons -->
+            <div> 
+                <button id="yes" class="yes-no-button">YES</button>
+                <button id="no" class="yes-no-button">NO</button>
+            </div> 
+        </div>
     </body>
 
     <script type="text/javascript">
