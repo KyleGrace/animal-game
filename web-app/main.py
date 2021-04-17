@@ -1,66 +1,42 @@
-from flask import Flask, render_template, jsonify
-import random
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for
+import random,secrets
 import json
+from user import *
 
 app = Flask(__name__)
 
-votes = 0
-
-animal_metric = 15
-human_metric = 15
-
-prompts = {
-    "kill all animals": (-10, -9),
-    "kill half of the animals": (-5, -4),
-    "kill all humans": (5, -10),
-    "require everyone to be vegan": (5, -5),
-}
-
-keys = prompts.keys()
-game_prompt = random.choice(list(keys))
-animal_change, human_change = prompts[game_prompt]
-del prompts[game_prompt]
+app.secret_key = secrets.token_bytes(32)
 
 @app.route("/")
 def index():
-    return render_template("index.html", animal_metric = animal_metric, human_metric = human_metric, game_prompt=game_prompt)
+    #initializes session
+    initializeSession()
+
+    resp = render_template("index.html")
+    return resp
+
+@app.route("/lost")
+def loser():
+    return "You are a fucking loser."
 
 @app.route("/yes", methods=["POST"])
 def optionyes():
-    global animal_metric
-    global human_metric
-    global game_prompt
-    global prompts
-    global animal_change
-    global human_change
+    yesSession()
 
-    animal_metric += animal_change
-    human_metric += human_change
+    if hasLost():
+        return redirect(url_for('loser'))
 
-    game_prompt = random.choice(list(keys))
-    animal_change, human_change = prompts[game_prompt]
-    del prompts[game_prompt]
-
-    response_string = str(animal_metric) + "#" + str(human_metric) + "#" + game_prompt
+    response_string = str(session['animal_metric']) + "#" + str(session['human_metric']) + "#" + session['game_prompt']
     return response_string
 
 @app.route("/no", methods=["POST"])
 def optionno():
-    global animal_metric
-    global human_metric
-    global game_prompt
-    global prompts
-    global animal_change
-    global human_change
+    noSession()
 
-    animal_metric += 0
-    human_metric += 0
+    if hasLost():
+        return redirect(url_for('loser'))
 
-    game_prompt = random.choice(list(keys))
-    animal_change, human_change = prompts[game_prompt]
-    del prompts[game_prompt]
-
-    response_string = str(animal_metric) + "#" + str(human_metric) + "#" + game_prompt
+    response_string = str(session['animal_metric']) + "#" + str(session['human_metric']) + "#" + session['game_prompt']
     return response_string
     
 

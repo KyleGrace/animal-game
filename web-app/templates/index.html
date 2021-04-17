@@ -3,19 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Voting App !</title>
+        <title> Kingdom</title>
     </head>
 
+    <audio controls>
+        <source src="music.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
     
     <body>
         <!-- animal game demo -->
         Metric:
-        <div id="prompt">{{ game_prompt }}</div>
+        <div id="prompt">{{ session['game_prompt'] }}</div>
         <br>
         <br>
-        animal metric: <span id="animal">{{ animal_metric }}</span>
+        animal metric: <span id="animal">{{ session['animal_metric'] }}</span>
         <br>
-        human metric: <span id="human">{{ human_metric }}</span>
+        human metric: <span id="human">{{ session['human_metric'] }}</span>
         <br>
         <button id="yes">YES</button>
         <br>
@@ -32,17 +36,20 @@
                         const response = request.responseText;
 
                         if (button.id == "yes" | button.id == "no") {
-                            if (button.id == "yes") {
-
                                 let results = response.split("#");
-                                let new_animal_metric = results[0];
-                                let new_human_metric = results[1];
-                                let new_prompt = results[2];
 
-                                document.getElementById('animal').innerHTML = new_animal_metric;
-                                document.getElementById('human').innerHTML = new_human_metric;
-                                document.getElementById('prompt').innerHTML = new_prompt;
-                            }
+                                if (!response.includes('#')) {
+                                    window.location.href = "/lost"
+                                }
+                                else {
+                                    let new_animal_metric = results[0];
+                                    let new_human_metric = results[1];
+                                    let new_prompt = results[2];
+
+                                    document.getElementById('animal').innerHTML = new_animal_metric;
+                                    document.getElementById('human').innerHTML = new_human_metric;
+                                    document.getElementById('prompt').innerHTML = new_prompt;
+                                }
                             
                         }
                         
