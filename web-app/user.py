@@ -1,16 +1,12 @@
 import random
 from flask import session
+from prompts import *
 
 def initializeSession():
     session['animal_metric'] = 15
     session['human_metric'] = 15
 
-    prompts = {
-            "kill all animals": (-10, -9),
-            "kill half of the animals": (-5, -4),
-            "kill all humans": (5, -10),
-            "require everyone to be vegan": (5, -5),
-        }
+    prompts = starterPrompts
 
     keys = prompts.keys()
     game_prompt = random.choice(list(keys))
@@ -22,12 +18,15 @@ def initializeSession():
 def yesSession():
     game_prompt=session['game_prompt']
     prompts = session['prompts']
-    human_change, animal_change = prompts[game_prompt]
+    animal_change,human_change = prompts[game_prompt]
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
 
     prompts.pop(game_prompt)
+
+    if not prompts:
+        return 
 
     keys = prompts.keys()
     newprompt = random.choice(list(keys))
@@ -38,12 +37,15 @@ def yesSession():
 def noSession():
     game_prompt=session['game_prompt']
     prompts = session['prompts']
-    human_change, animal_change = prompts[game_prompt]
+    animal_change,human_change = prompts[game_prompt]
 
     session['animal_metric'] += 0
     session['human_metric'] += 0
 
     prompts.pop(game_prompt)
+
+    if not prompts:
+        return 
 
     keys = prompts.keys()
     newprompt = random.choice(list(keys))
@@ -51,5 +53,10 @@ def noSession():
 
     session['prompts'] = prompts
 
+
 def hasLost():
     return ((int(session['animal_metric'])<=0) or (int(session['human_metric'])<=0))
+
+def isEmpty():
+    return not session['prompts']
+

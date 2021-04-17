@@ -1,0 +1,23 @@
+<style>
+    body {
+        background-color: black;
+        font-family:'VT323';
+        color:white;
+        font-size:2em;
+    }
+</style>
+<body>
+
+    <div id="win"> WINNER WINNER CHICKY DINNERRR!!!!!!!1! </div>
+
+    <img src="/static/win.gif">
+
+    <hr>
+
+    <button id='start' onclick='play_game()'>Play Again?</button>
+    <script>
+        function play_game() {
+            window.location.href = "/game"
+        }
+    </script>
+</body>

@@ -1,25 +1,34 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Kingdom</title>
     </head>
 
-    <audio controls>
-        <source src="music.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-    
+    <style>
+        body {
+            background-color: black;
+            font-family:'VT323';
+            color:white;
+            font-size:2em;
+        }
+    </style>
+
     <body>
         <!-- animal game demo -->
-        Metric:
+        <h2>Current Suggestion:</h2>
         <div id="prompt">{{ session['game_prompt'] }}</div>
         <br>
         <br>
-        animal metric: <span id="animal">{{ session['animal_metric'] }}</span>
+        <h3>Status of the community:</h3>
         <br>
-        human metric: <span id="human">{{ session['human_metric'] }}</span>
+        Non-Human Animal Happiness: <span id="animal">{{ session['animal_metric'] }}</span>
+        <br>
+        Human Animal Happiness: <span id="human">{{ session['human_metric'] }}</span>
         <br>
         <button id="yes">YES</button>
         <br>
@@ -39,7 +48,12 @@
                                 let results = response.split("#");
 
                                 if (!response.includes('#')) {
-                                    window.location.href = "/lost"
+                                    if (response.includes('lose')){
+                                        window.location.href = 'lost';
+                                    }
+                                    else {
+                                        window.location.href = 'win';
+                                    }
                                 }
                                 else {
                                     let new_animal_metric = results[0];
