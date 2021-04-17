@@ -23,19 +23,27 @@
             color:white;
             font-size:2em;
             text-align: center;
+            overflow: scroll;
+            height: 100%;
         }
 
-        .center {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+        html {
+            height: 100%
+        }
+
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
         }
 
         .yes-no-button{
             width: 3em
+        }
+
+        .yes-no-button:hover{
+            opacity: 0.5;
         }
 
         #prompt-outline{
@@ -49,8 +57,18 @@
     </style>
 
     <body>
-        <div class="center">
-            
+        <!-- Music -->
+        <!-- Attribution:
+            Ethernight Club by Kevin MacLeod
+            Link: https://incompetech.filmmusic.io/song/7612-ethernight-club
+            License: https://filmmusic.io/standard-license
+        -->
+        <audio>
+            <embed src="/static/Ethernight-Club.mp3" loop="true" hidden="true" autostart="true">
+        </audio>
+
+        <!-- Page content -->
+        <div class="center container">
 
             <!-- Metrics -->
             <div style="text-align: left; font-size: 0.8em">
@@ -75,6 +93,7 @@
         </div>
     </body>
 
+    <!-- Javascript -->
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('button').forEach(button => {

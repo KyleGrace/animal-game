@@ -21,19 +21,26 @@
             color:white;
             font-size:2em;
             text-align: center;
+            height: 100%;
         }
 
-        .center {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+        html{
+            height: 100%
+        }
+
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
         }
 
         #start-text:hover {
             animation: blink 0.8s linear infinite;
+        }
+
+        #start {
+            width: 10em;
         }
 
         @keyframes blink {
@@ -47,7 +54,7 @@
     </style>
     
     <body>
-        <div class="center">
+        <div class="center container">
 
             <div style="font-size: 1.5em">
                 WELCOME TO KINGDOM
@@ -59,7 +66,10 @@
 
             <br>
         
-            <button id='start' onclick='play_game()'><span id="start-text">BEGIN THE GAME</span></button>
+            <div>
+                <button id='start' onclick='play_game()'><span id="start-text">BEGIN THE GAME</span></button>
+            </div>
+            
         </div>
         
         <script>
