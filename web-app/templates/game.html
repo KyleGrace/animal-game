@@ -107,11 +107,11 @@
                                 let results = response.split("#");
 
                                 if (!response.includes('#')) {
-                                    if (response.includes('lose')){
+                                    if (response.includes('$lose$')){
                                         window.location.href = 'lost';
                                     }
                                     else {
-                                        window.location.href = 'win';
+                                        window.location.href = '$win$';
                                     }
                                 }
                                 else {
