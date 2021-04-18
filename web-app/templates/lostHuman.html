@@ -1,24 +1,47 @@
-<style>
-    body {
-        background-color: black;
-        font-family:'VT323';
-        color:white;
-        font-size:2em;
-    }
-</style>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <div id="$lose_human$"> The humans have become angry with you. The people have voted you out of office! </div>
+        <title> Kingdom</title>
+    </head>
 
-    <img src="/static/lose.gif">
-
-    <hr>
-
-    <button id='start' onclick='play_game()'>Play Again?</button>
-    <script>
-        function play_game() {
-            window.location.href = "/game"
+    <style>
+        body {
+            background-color: black;
+            font-family:'VT323';
+            color:white;
+            font-size:2em;
+            text-align:center;
         }
-    </script>
-</body>
+    </style>
+
+    <body>
+        <hr>
+        <!-- The Four Stages of Cruelty - William Hogarth -->
+        <div>
+            <img src="static/cruelty.jpg" class="img-fluid rounded thumbnail" alt="People surrounding dissection of human" style="max-height:45vh">
+        </div>
+
+        <hr>
+
+        <div id="$lose_human$"> The humans have become angry with you. The people have voted you out of office! </div>
+
+        <hr>
+
+        <button id='start' onclick='play_game()'>Play Again?</button>
+        <script>
+            function play_game() {
+                window.location.href = "/game"
+            }
+        </script>
+        <hr>
+    </body>
+</html>
