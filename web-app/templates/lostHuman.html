@@ -1,0 +1,24 @@
+<style>
+    body {
+        background-color: black;
+        font-family:'VT323';
+        color:white;
+        font-size:2em;
+    }
+</style>
+
+<body>
+
+    <div id="$lose_human$"> The humans have become angry with you. The people have voted you out of office! </div>
+
+    <img src="/static/lose.gif">
+
+    <hr>
+
+    <button id='start' onclick='play_game()'>Play Again?</button>
+    <script>
+        function play_game() {
+            window.location.href = "/game"
+        }
+    </script>
+</body>

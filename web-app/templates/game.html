@@ -106,13 +106,14 @@
                         if (button.id == "yes" | button.id == "no") {
                                 let results = response.split("#");
 
-                                if (!response.includes('#')) {
-                                    if (response.includes('$lose$')){
-                                        window.location.href = 'lost';
-                                    }
-                                    else {
-                                        window.location.href = 'win';
-                                    }
+                                if (response.includes('$lose_human$')) {
+                                    window.location.href = 'losthuman';
+                                }
+                                else if (response.includes('$lose_animal$')) {
+                                    window.location.href = 'lostanimal';
+                                }
+                                else if (response.includes('$win$')) {
+                                    window.location.href = 'win';
                                 }
                                 else {
                                     let new_animal_metric = results[0];

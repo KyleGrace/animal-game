@@ -58,8 +58,11 @@ def noSession():
     session['prompts'] = prompts
 
 
-def hasLost():
-    return ((int(session['animal_metric'])<=0) or (int(session['human_metric'])<=0))
+def hasLostAnimal():
+    return int(session['animal_metric'])<=0
+
+def hasLostHuman():
+    return int(session['human_metric'])<=0
 
 def isEmpty():
     return not session['prompts']

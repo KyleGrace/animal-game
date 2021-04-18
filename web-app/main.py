@@ -20,9 +20,14 @@ def game():
     resp = render_template("game.html")
     return resp
 
-@app.route("/lost")
-def loser():
-    resp = render_template("lost.html")
+@app.route("/lostanimal")
+def loser_animal():
+    resp = render_template("lostAnimal.html")
+    return resp
+
+@app.route("/losthuman")
+def loser_human():
+    resp = render_template("lostHuman.html")
     return resp
 
 @app.route("/win")
@@ -34,8 +39,10 @@ def winner():
 def optionyes():
     yesSession()
 
-    if hasLost():
-        return redirect(url_for('loser'))
+    if hasLostAnimal():
+        return redirect(url_for('loser_animal'))
+    elif hasLostHuman():
+        return redirect(url_for('loser_human'))
     elif isEmpty():
         return redirect(url_for('winner'))
 
@@ -46,8 +53,10 @@ def optionyes():
 def optionno():
     noSession()
 
-    if hasLost():
-        return redirect(url_for('loser'))
+    if hasLostAnimal():
+        return redirect(url_for('loser_animal'))
+    elif hasLostHuman():
+        return redirect(url_for('loser_human'))
     elif isEmpty():
         return redirect(url_for('winner'))
 
