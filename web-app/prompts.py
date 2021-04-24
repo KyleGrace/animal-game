@@ -60,4 +60,18 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 meals in schools. Many parents are against this,
                 but Udge believes its a good idea. Would you
                 like to provide funding for Udge's program?""":  [(6, -3), (-1, 1),'/static/cruelty.jpg'],
+            """The Earl of Claremont, Ill Banthes, has proposed
+                animal studies as a new primary school subject. 
+                Will you implement this new subject?""":          [(3,0),(-1,0),'/static/cruelty.jpg'],
+            """You have been visited by Hilliam Wogarth. He has
+                recently published a paper arguing that violence
+                towards animals, conditions humans towards
+                violence. He argues that you make animal
+                cruelty punishable by life in prison. Will you
+                do so?""":                                        [(5,2),(-2,-1),'/static/cruelty.jpg'],
+            """A small cat has snuck into your chamber, will you
+                let them stay?""":                                [(0,0),(0,0),'/static/izzyround.jpg'],
+            """Izzy, representative of the feline district, has
+                come asking for support in providing more tuna
+                to their community. Will you provide the tuna?""":[(3,-1),(-2,0),'/static/standizzy.jpeg'],
 }

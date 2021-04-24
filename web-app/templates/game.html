@@ -78,10 +78,11 @@
             </div>
 
             <!-- Prompt -->
+
             <div id="prompt-outline">
                 <div style="font-size: 1.5em">Current Suggestion:</div>
                 
-                <img id="prompt-graphic" src= 'static/cruelty.jpg' class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:25vh">
+                <img id="prompt-graphic" src= "{{ session['image'] | default('/static/dedication.jpg') }}" class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:25vh">
 
                 <div id="prompt-box">
                     <div id="prompt">{{ session['game_prompt'] }}</div>
@@ -104,7 +105,7 @@
                 button.onclick = () => {
                     const request = new XMLHttpRequest();
                     request.open('POST', `/${button.id}`);
-                    request.onload = () => {
+                    request.onloadend = () => {
                         const response = request.responseText;
 
                         if (button.id == "yes" | button.id == "no") {

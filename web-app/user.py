@@ -10,8 +10,10 @@ def initializeSession():
 
     keys = prompts.keys()
     game_prompt = random.choice(list(keys))
+    image = prompts[game_prompt][2]
     session['game_prompt'] = game_prompt
     session['prompts'] = prompts
+    session['image'] = image
 
     return session
 
@@ -20,10 +22,12 @@ def yesSession():
     prompts = session['prompts']
 
     yesChange = prompts[game_prompt][0]
+    image = prompts[game_prompt][2]
     animal_change, human_change = yesChange
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
+    session['image'] = image
 
     prompts.pop(game_prompt)
 
@@ -32,8 +36,10 @@ def yesSession():
 
     keys = prompts.keys()
     newprompt = random.choice(list(keys))
+    image = prompts[newprompt][2]
+    
+    session['image'] = image
     session['game_prompt'] = newprompt
-
     session['prompts'] = prompts
 
 def noSession():
@@ -45,6 +51,7 @@ def noSession():
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
+    
 
     prompts.pop(game_prompt)
 
@@ -53,8 +60,10 @@ def noSession():
 
     keys = prompts.keys()
     newprompt = random.choice(list(keys))
-    session['game_prompt'] = newprompt
+    image = prompts[newprompt][2]
 
+    session['image'] = image
+    session['game_prompt'] = newprompt
     session['prompts'] = prompts
 
 
