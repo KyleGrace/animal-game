@@ -80,6 +80,9 @@
             <!-- Prompt -->
             <div id="prompt-outline">
                 <div style="font-size: 1.5em">Current Suggestion:</div>
+                
+                <img id="prompt-graphic" src= 'static/cruelty.jpg' class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:25vh">
+
                 <div id="prompt-box">
                     <div id="prompt">{{ session['game_prompt'] }}</div>
                 </div>
@@ -120,15 +123,17 @@
                                     let new_animal_metric = results[0];
                                     let new_human_metric = results[1];
                                     let new_prompt = results[2];
+                                    let new_image = results[3];
 
                                     document.getElementById('animal').innerHTML = new_animal_metric;
                                     document.getElementById('human').innerHTML = new_human_metric;
                                     document.getElementById('prompt').innerHTML = new_prompt;
+                                    document.getElementById('prompt-graphic').src = new_image
                                 }
                             
                         }
                         
-                    }; 
+                    };  
                     request.send();
                 };
             });

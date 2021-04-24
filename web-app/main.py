@@ -46,7 +46,10 @@ def optionyes():
     elif isEmpty():
         return redirect(url_for('winner'))
 
-    response_string = str(session['animal_metric']) + "#" + str(session['human_metric']) + "#" + session['game_prompt']
+    response_string = (str(session['animal_metric']) + "#" 
+                    + str(session['human_metric']) + "#" 
+                    + session['game_prompt'] + "#" 
+                    + session['image'])
     return response_string
 
 @app.route("/no", methods=["POST"])
@@ -60,7 +63,10 @@ def optionno():
     elif isEmpty():
         return redirect(url_for('winner'))
 
-    response_string = str(session['animal_metric']) + "#" + str(session['human_metric']) + "#" + session['game_prompt']
+    response_string = (str(session['animal_metric']) + "#" 
+                    + str(session['human_metric']) + "#" 
+                    + session['game_prompt'] + "#" 
+                    + session['image'])
     return response_string
     
 
