@@ -35,7 +35,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 age. Now there's a dead elephant in your room,
                 and artist Hamien Dirst wants to keep it for
                 an art project. Allow Dirst to keep the
-                elephant?""":                                    [(random.randint(0,5), random.randint(-5,5)), (0, 0),'/static/cruelty.jpg'],
+                elephant?""":                                    [(random.randint(0,5), random.randint(-5,5)), (0, 0),'/static/hirst.jpg'],
             """You're visited by a mysterious creature named
                 Helena, who offers you a blender with a live
                 goldfish in it. Turn on the blender?""":         [(0, -1), (0, 0),'/static/cruelty.jpg'],
@@ -74,4 +74,11 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
             """Izzy, representative of the feline district, has
                 come asking for support in providing more tuna
                 to their community. Will you provide the tuna?""":[(3,-1),(-2,0),'/static/standizzy.jpeg'],
+            """Your space agency has plans to build a large 
+               telescope in the center of the national forest.
+               The telescope will be used to search for aliens.
+               Ned Chiang has approached you in opposition of 
+               this project. He believes it will destroy animal
+               habitats and widen the divide between species.
+               Will you cancel the project.""":                   [(4,-2),(-4,3),'/static/telescope.jpg'],
 }
