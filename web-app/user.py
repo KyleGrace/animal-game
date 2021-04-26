@@ -3,6 +3,7 @@ from flask import session
 from prompts import *
 
 def initializeSession():
+    numdays = 10 # Update this to determine how many prompts they must pass to win
     session['animal_metric'] = 10
     session['human_metric'] = 10
 
@@ -14,6 +15,7 @@ def initializeSession():
     session['game_prompt'] = game_prompt
     session['prompts'] = prompts
     session['image'] = image
+    session['remain'] = numdays
 
     return session
 
@@ -27,7 +29,7 @@ def yesSession():
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
-    session['image'] = image
+    session['remain'] = session['remain'] - 1
 
     prompts.pop(game_prompt)
 
@@ -51,7 +53,7 @@ def noSession():
 
     session['animal_metric'] += animal_change
     session['human_metric'] += human_change
-    
+    session['remain'] = session['remain'] - 1
 
     prompts.pop(game_prompt)
 
@@ -74,5 +76,5 @@ def hasLostHuman():
     return int(session['human_metric'])<=0
 
 def isEmpty():
-    return not session['prompts']
+    return (session['remain']==0) or (not session['prompts'])
 
