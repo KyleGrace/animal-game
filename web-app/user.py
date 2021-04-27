@@ -2,6 +2,9 @@ import random
 from flask import session
 from prompts import *
 
+import asyncio
+from functools import wraps
+
 def initializeSession():
     numdays = 10 # Update this to determine how many prompts they must pass to win
     session['animal_metric'] = 10
@@ -18,6 +21,12 @@ def initializeSession():
     session['remain'] = numdays
 
     return session
+
+def async_function(f):
+    @wraps(f)
+    def wrapped(*args, **kwargs):
+        return asyncio.run(f(*args, **kwargs))
+    return wrapped
 
 def yesSession():
     game_prompt=session['game_prompt']

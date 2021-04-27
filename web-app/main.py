@@ -16,6 +16,7 @@ def index():
 def game():
     #initializes session
     initializeSession()
+    asyncio.sleep(2)
 
     resp = render_template("game.html")
     return resp
@@ -37,7 +38,7 @@ def winner():
 
 @app.route("/yes", methods=["POST"])
 def optionyes():
-    yesSession()
+    async_function(yesSession())
 
     if hasLostAnimal():
         return redirect(url_for('loser_animal'))
@@ -54,7 +55,7 @@ def optionyes():
 
 @app.route("/no", methods=["POST"])
 def optionno():
-    noSession()
+    async_function(noSession())
 
     if hasLostAnimal():
         return redirect(url_for('loser_animal'))
