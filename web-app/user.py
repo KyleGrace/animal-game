@@ -49,6 +49,8 @@ def yesSession():
     session['game_prompt'] = newprompt
     session['prompts'] = prompts
 
+    session.modified = True
+
 def noSession():
 
     game_prompt = session['game_prompt']
@@ -73,6 +75,8 @@ def noSession():
     session['image'] = image
     session['game_prompt'] = newprompt
     session['prompts'] = prompts
+
+    session.modified = True
 
 
 def hasLostAnimal():
