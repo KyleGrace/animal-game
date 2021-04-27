@@ -39,6 +39,7 @@ def winner():
 @app.route("/yes", methods=["POST"])
 def optionyes():
     async_function(yesSession())
+    asyncio.sleep(2)
 
     if hasLostAnimal():
         return redirect(url_for('loser_animal'))
@@ -56,6 +57,7 @@ def optionyes():
 @app.route("/no", methods=["POST"])
 def optionno():
     async_function(noSession())
+    asyncio.sleep(2)
 
     if hasLostAnimal():
         return redirect(url_for('loser_animal'))
