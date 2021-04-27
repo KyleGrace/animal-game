@@ -38,7 +38,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 elephant?""":                                    [(random.randint(0,5), random.randint(-5,5)), (0, 0),'/static/hirst.jpg'],
             """You're visited by a mysterious creature named
                 Helena, who offers you a blender with a live
-                goldfish in it. Turn on the blender?""":         [(0, -1), (0, 0),'/static/cruelty.jpg'],
+                goldfish in it. Turn on the blender?""":         [(0, -1), (0, 0),'/static/helena.jpg'],
             """Your foreign embassador has informed you of the
                 new "life release" trend that's viral across
                 Japan! He's super excited to release
@@ -48,13 +48,13 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
             """There's a elephant artist that has been gaining
                 popularity. Would you like to recognize their
                 work by admitting them to the national
-                art collection?""":                              [(2, 0), (-1, 1),'/static/cruelty.jpg'],
+                art collection?""":                              [(2, 0), (-1, 1),'/static/suda.jpg'],
             """You biggest energy company, PB, accidentally
                 spilled oil into the ocean. Your coastal
                 advisor Bacqueline Jishop suggests a
                 million dollar initiative to clean up
                 the oil spill. Would you like to
-                raise the taxes for this intiative?""":          [(1, -6), (-5, 0),'/static/cruelty.jpg'],
+                raise the taxes for this intiative?""":          [(1, -6), (-5, 0),'/static/bishop.jpg'],
             """One of your advisors, Udge Ferica, wants to
                 start a nutrition program to encourage vegan
                 meals in schools. Many parents are against this,

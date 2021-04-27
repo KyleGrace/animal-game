@@ -10,3 +10,6 @@ images = [
 # rats : http://www.lucykimbell.com/stuff/Kimbell_rats_Tamara_public.pdf
 # Broglio : https://english.asu.edu/content/ron-broglio
 # Ants : https://www.catherinechalmers.com/#/test-idol-offering/
+# Helena : http://challengersofart.blogspot.com/2014/07/marco-evaristti-helena.html
+# Suda : https://www.youtube.com/watch?v=2jKWQKrnvIc
+# Bishop : http://arthurrogergallery.com/exhibition/jacqueline-bishop/
