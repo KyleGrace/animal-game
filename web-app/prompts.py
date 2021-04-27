@@ -65,7 +65,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 Will you implement this new subject?""":          [(3,0),(-1,0),'/static/bill.png'],
             """You have been visited by Hilliam Wogarth. He has
                 recently published a paper arguing that violence
-                towards animals, conditions humans towards
+                towards animals conditions humans towards
                 violence. He argues that you make animal
                 cruelty punishable by life in prison. Will you
                 do so?""":                                        [(5,2),(-2,-1),'/static/cruelty.jpg'],
@@ -110,5 +110,5 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
             """The Reverend of Nano Bio Info Cogno has come to 
                you demanding that their religion become officially
                recognized by the state. Will you make a public
-               announcement of your support?""":                  [(-3,-2),(2,2),'/static/bio.png']             
+               announcement of your support?""":                  [(-3,-2),(2,2),'/static/bio.png'],             
 }
