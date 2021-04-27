@@ -55,45 +55,59 @@
     </style>
     
     <body>
-        <div class="center container">
-            <!-- Image -->
-            <div>
-                <img src="static/dedication.jpg" class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:45vh">
-            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 center">
+                    <div>
+                        <img src="static/dedication_mirrored.jpg" class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:45vh">
+                    </div>
+                </div>
+                <div id="landing" class="col-sm-6 center">
+                    <div class="container">
+                        <div style="font-size: 1.5em">
+                            WELCOME TO KINGDOM
+                        </div>
+                        
+                        <div>
+                            You are the Monarch. You will be presented with suggestions from various individuals. 
+                            It is up to you to decide whether you say yes or no to their request.
+                            You must maintain the happiness of all animal subjects.
+                        </div>
             
-            <div style="font-size: 1.5em">
-                WELCOME TO KINGDOM
-            </div>
+                        <br>
             
-            <div>
-                You are the Monarch. You will be presented with suggestions from various individuals. 
-                It is up to you to decide whether you say yes or no to their request.
-                You must maintain the happiness of all animal subjects.
-            </div>
-
-            <hr>
-
-            <div>
-                Click yes or no to accept or reject each suggestion. Every decision you make will raise or lower the human 
-                animal and non-human animal happiness levels at the top of the page. If one runs out, you lose.
-                <br>
-                <hr>
-                <i>Refreshing will restart the game.</i>
-            </div>
-
-            <br>
-        
-            <div>
-                <button id='start' onclick='play_game()'><span id="start-text">BEGIN THE GAME</span></button>
-            </div>
+                        <div>
+                            Click yes or no to accept or reject each suggestion. Every decision you make will raise or lower the human 
+                            animal and non-human animal happiness levels at the top of the page. If one runs out, you lose.
+                            <br>
+                            <hr>
+                            <i>Refreshing will restart the game.</i>
+                        </div>
             
-            <hr>
+                        <br>
+                    
+                        <div>
+                            <button id='start' onclick='play_game()'><span id="start-text">BEGIN THE GAME</span></button>
+                        </div>
+                        
+                        <br>
+            
+                    </div>
+                </div>
+                <div class="col-sm-3 center">
+                    <div>
+                        <img src="static/dedication.jpg" class="img-fluid rounded thumbnail" alt="A Dedication, Watts" style="max-height:45vh">
+                    </div>
+                </div>
+            </div>
 
         </div>
-
-        <hr>
         
         <script>
+            window.onload = function() {
+                window.location.href = "/#landing";
+            }
+
             function play_game() {
                 window.location.href = "/game"
             }
