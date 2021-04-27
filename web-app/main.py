@@ -20,6 +20,11 @@ def game():
     resp = render_template("game.html")
     return resp
 
+@app.route("/about")
+def about():
+    resp = render_template("about.html")
+    return resp
+
 @app.route("/lostanimal")
 def loser_animal():
     resp = render_template("lostAnimal.html")
