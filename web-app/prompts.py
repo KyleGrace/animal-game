@@ -23,7 +23,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 and to test out your kingdom's newest
                 rocket, your advisors have suggested to
                 send a single chimp into space! It'll
-                be good for the press! Do you accept?""":        [(-1, 5), (0, -1),'/static/cruelty.jpg'],
+                be good for the press! Do you accept?""":        [(-1, 5), (0, -1),'/static/ham.jpg'],
             """The neighboring kingdom's shaman, Carcus
                 Moates, visits you and asks you to take a trip
                 with him into the Underworld. You're curious
@@ -59,7 +59,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 start a nutrition program to encourage vegan
                 meals in schools. Many parents are against this,
                 but Udge believes its a good idea. Would you
-                like to provide funding for Udge's program?""":  [(6, -3), (-1, 1),'/static/cruelty.jpg'],
+                like to provide funding for Udge's program?""":  [(6, -3), (-1, 1),'/static/meat.jpg'],
             """The Earl of Claremont, Ill Banthes, has proposed
                 animal studies as a new primary school subject. 
                 Will you implement this new subject?""":          [(3,0),(-1,0),'/static/bill.png'],
@@ -68,9 +68,9 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 towards animals conditions humans towards
                 violence. He argues that you make animal
                 cruelty punishable by life in prison. Will you
-                do so?""":                                        [(5,2),(-2,-1),'/static/cruelty.jpg'],
+                do so?""":                                        [(5,2),(-2,-1),'/static/perfection.jpg'],
             """A small cat has snuck into your chamber, will you
-                let them stay?""":                                [(0,0),(0,0),'/static/izzyround.jpg'],
+                let them stay?""":                                [(0,0),(0,0),'/static/maiercat.jpg'],
             """Izzy, representative of the feline district, has
                 come asking for support in providing more tuna
                 to their community. Will you provide the tuna?""":[(3,-1),(-2,0),'/static/standizzy.jpeg'],
@@ -110,5 +110,16 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
             """The Reverend of Nano Bio Info Cogno has come to 
                you demanding that their religion become officially
                recognized by the state. Will you make a public
-               announcement of your support?""":                  [(-3,-2),(2,2),'/static/bio.png'],             
+               announcement of your support?""":                  [(-3,-2),(2,2),'/static/bio.png'],
+            """The previous monarch banned the use of animal fur
+                for clothing purposes, citing that it symbolized
+                human dominion over other animals. Udge Ferica,
+                your advisor, has suggested you ban fake fur as 
+                well for the same reasons. Will you ban 
+                fake fur? as well""":                             [(4,-1),(-4,2),'/static/maierfoxscarf.jpg'],
+            """Gryle Kace has submitted a proposal to create
+                a state health insurance program for all animal
+                residents. To fund it, he suggests you raise
+                taxes on the nobles. Will you support this 
+                legislation?""":                                  [(4,-2),(-2,2),'/static/maierdog.jpg'],            
 }

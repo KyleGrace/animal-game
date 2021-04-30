@@ -5,7 +5,8 @@ from user import *
 
 app = Flask(__name__,static_url_path='/static')
 
-app.secret_key = secrets.token_bytes(32)
+# app.secret_key = secrets.token_bytes(32)
+app.secret_key = "EASYKEY"
 
 @app.route("/")
 def index():
