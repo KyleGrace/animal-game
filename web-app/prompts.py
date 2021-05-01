@@ -116,7 +116,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 human dominion over other animals. Udge Ferica,
                 your advisor, has suggested you ban fake fur as 
                 well for the same reasons. Will you ban 
-                fake fur? as well""":                             [(4,-1),(-4,2),'/static/maierfoxscarf.jpg'],
+                fake fur as well?""":                             [(4,-1),(-4,2),'/static/maierfoxscarf.jpg'],
             """Gryle Kace has submitted a proposal to create
                 a state health insurance program for all animal
                 residents. To fund it, he suggests you raise
