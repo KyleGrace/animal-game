@@ -80,7 +80,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                Ned Chiang has approached you in opposition of 
                this project. He believes it will destroy animal
                habitats and widen the divide between species.
-               Will you cancel the project.""":                   [(4,-2),(-4,3),'/static/telescope.jpg'],
+               Will you cancel the project?""":                   [(4,-2),(-4,3),'/static/telescope.jpg'],
             """Bnæbjörnsdóttir and Milson have approached you 
                as representatives of the Old York Animal
                Advocacy Board. They propose new legislation
