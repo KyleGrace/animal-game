@@ -24,27 +24,59 @@
             font-size:2em;
             text-align:center;
         }
+
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
+        }
+
+        #start-text:hover {
+            animation: blink 0.8s linear infinite;
+        }
+
+        #start {
+            width: 10em;
+        }
+        
+
+        @keyframes blink {
+            0%,50% {
+                opacity: 0.5;
+            }
+            51%,100% {
+                opacity: 1;
+            }
+        }
     </style>
 
     <body>
-        <hr>
-        <!-- Simon Tookoome, I Am Always Thinking of Animals-->
-        <div>
-            <img src="static/thinking.jpg" class="img-fluid rounded thumbnail" alt="Agoriginal art of humans surrounded by animals" style="max-height:45vh">
-        </div>
-
-        <hr>
-
-        <div id="$win$"> Rejoice! You have made it through your term as ruler. You may not be remembered fondly, but at least the kingdom has survived.</div>
-
-        <hr>
-
-        <button id='start' onclick='play_game()'>Play Again?</button>
-        <script>
-            function play_game() {
-                window.location.href = "/game"
-            }
-        </script>
-        <hr>
+        <div class="center">
+            <br>
+            <!-- Simon Tookoome, I Am Always Thinking of Animals-->
+            <div>
+                <img src="static/thinking.jpg" class="img-fluid rounded thumbnail" alt="Agoriginal art of humans surrounded by animals" style="max-height:45vh">
+            </div>
+    
+            <br>
+    
+            <div id="$win$">
+                <p>Rejoice! You have made it through your term as ruler.</p>
+                <p>You may not be remembered fondly, but at least the kingdom has survived.</p>
+            </div>
+    
+            <br>
+            <div>
+                <button id='start' onclick='play_game()'><span id="start-text">Play Again?</span></button>
+            </div>
+            
+            <script>
+                function play_game() {
+                    window.location.href = "/game"
+                }
+            </script>
+            <br>
+        </div>    
     </body>
 </html>
