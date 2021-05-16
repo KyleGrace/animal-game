@@ -1,6 +1,6 @@
 # WELCOME TO KINGDOM
 
-Inspired by Pitzer's Art and Animals course, we created a project to explore the relationship between human and non-human animals. At the time of this writing, this game currently lives at kylegrace.com
+Inspired by Pitzer's Art and Animals course, we created a project to explore the relationship between human and non-human animals. At the time of this writing, this game currently lives at https://kingdom-310822.wl.r.appspot.com.
 
 ## Project Statement
 
