@@ -1,0 +1,77 @@
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="static/favicon.png"/>
+
+        <title>Kingdom</title>
+    </head>
+
+    <style>
+        body {
+            background-color: black;
+            font-family:'VT323';
+            color:white;
+            font-size:2em;
+            text-align:center;
+        }
+
+        .center{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100%;
+        }
+
+    </style>
+
+    <body>
+        <div class="center container">
+
+            <!-- Carousel --> 
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" style="max-height:100%">
+
+                <!-- Gallery -->
+                <div class="carousel-item active">
+                    <img src="static/dedication_mirrored.jpg" alt="static/dedication_mirrored.jpg" style="max-height:80vh; max-width:90vw">
+                    <div class="carousel-caption">
+                        <p>Use the arrows on this page to browse the images and their associated prompts.</p>
+                    </div>
+                </div>
+                
+                <!-- Prompts -->
+                {% for key, value in starterPrompts.items() %}
+                <div class="carousel-item">
+                    <img src="{{ value[2][1:] }}" alt="{{ value[2][1:] }}" style="max-height:80vh; max-width:90vw">
+                    <div class="carousel-caption">
+                        <p>{{ key }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                </div>
+                <!-- Controls -->
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>    
+    </body>
+</html>

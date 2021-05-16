@@ -8,6 +8,10 @@ app = Flask(__name__,static_url_path='/static')
 # app.secret_key = secrets.token_bytes(32)
 app.secret_key = "EASYKEY"
 
+#########
+# Pages #
+#########
+
 @app.route("/")
 def index():
     resp = render_template('landing.html')
@@ -40,6 +44,16 @@ def loser_human():
 def winner():
     resp = render_template("win.html")
     return resp
+
+from prompts import *
+@app.route("/gallery")
+def gallery():
+    resp = render_template("gallery.html", starterPrompts=starterPrompts)
+    return resp
+
+###########
+# Methods #
+###########
 
 @app.route("/yes", methods=["POST"])
 def optionyes():
