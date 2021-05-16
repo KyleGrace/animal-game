@@ -45,8 +45,8 @@
                 <!-- Gallery -->
                 <div class="carousel-item active">
                     <img src="static/dedication_mirrored.jpg" alt="static/dedication_mirrored.jpg" style="max-height:80vh; max-width:90vw">
-                    <div class="carousel-caption">
-                        <p>Use the arrows on this page to browse the images and their associated prompts.</p>
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="background-color: rgba(0, 0, 0, 0.3)">Use the arrows on this page to browse the images and captions (captions can only be viewed on laptop).</p>
                     </div>
                 </div>
                 
@@ -54,8 +54,8 @@
                 {% for key, value in starterPrompts.items() %}
                 <div class="carousel-item">
                     <img src="{{ value[2][1:] }}" alt="{{ value[2][1:] }}" style="max-height:80vh; max-width:90vw">
-                    <div class="carousel-caption">
-                        <p>{{ key }}</p>
+                    <div class="carousel-caption d-none d-md-block">
+                        <p style="background-color: rgba(0, 0, 0, 0.3)">{{ key }}</p>
                     </div>
                 </div>
                 {% endfor %}
