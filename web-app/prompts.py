@@ -126,5 +126,4 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 the site of your new summer home. They say there's
                 cave art! Will you demolish the cave to continue 
                 building your home?""":                           [(-3,-2),(2,1),'/static/banksycave.jpg'],
-            """         
 }
