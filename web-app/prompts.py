@@ -121,5 +121,10 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 a state health insurance program for all animal
                 residents. To fund it, he suggests you raise
                 taxes on the nobles. Will you support this 
-                legislation?""":                                  [(4,-2),(-2,2),'/static/maierdog.jpg'],            
+                legislation?""":                                  [(4,-2),(-2,2),'/static/maierdog.jpg'],
+            """National scientists have discovered a cave beneath
+                the site of your new summer home. They say there's
+                cave art! Will you demolish the cave to continue 
+                building your home?""":                           [(-3,-2),(2,1),'/static/banksycave.jpg'],
+            """         
 }
