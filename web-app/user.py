@@ -5,11 +5,22 @@ from prompts import *
 import time
 
 def initializeSession():
+    session.clear()
+    # must be ~<20 or the cookies grow too large,
+    # requires rework of prompts storage in cookies to grow bigger than 20
     numdays = 10 # Update this to determine how many prompts they must pass to win
     session['animal_metric'] = 10
     session['human_metric'] = 10
 
     prompts = starterPrompts
+
+    # Shortening it to 11 prompts to help the cookies stay small
+    smallerPrompts = random.sample(list(prompts),(numdays+1))
+    newprompts = {}
+    for prompt in smallerPrompts:
+        newprompts[prompt] = starterPrompts[prompt]
+
+    prompts=newprompts
 
     keys = prompts.keys()
     game_prompt = random.choice(list(keys))
@@ -24,7 +35,6 @@ def initializeSession():
 
 
 def yesSession():
-
     game_prompt = session['game_prompt']
     prompts = session['prompts']
 
@@ -52,7 +62,6 @@ def yesSession():
     session.modified = True
 
 def noSession():
-
     game_prompt = session['game_prompt']
     prompts = session['prompts']
 

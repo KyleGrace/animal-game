@@ -40,7 +40,7 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 Helena, who offers you a blender with a live
                 goldfish in it. Turn on the blender?""":         [(0, -1), (0, 0),'/static/helena.jpg'],
             """Your foreign embassador has informed you of the
-                new "life release" trend that's viral across
+                new 'life release' trend that's viral across
                 Japan! He's super excited to release
                 animals, and has asked for your support.
                 Allow your kingdom to practice
@@ -126,4 +126,14 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 the site of your new summer home. They say there's
                 cave art! Will you demolish the cave to continue 
                 building your home?""":                           [(-3,-2),(2,1),'/static/banksycave.jpg'],
+            """Your advisor informs you that his best friend has
+                come to see you. He walks in with a bright red
+                suit. 'You must increase the supply of bones to 
+                the canine district!!' he cries. Will you do
+                so?""":                                           [(2,-2),(-2,1),'/static/wegmandog.jpg'],
+            """A movement has been gaining popularity calling
+                for the atonement of atrocities commited towards 
+                animals over prior centuries. Will you financially
+                support this movement by raising taxes to provide
+                better animal benefits?""":                       [(4,-3),(-3,0),'/static/banksydog.jpg'],
 }
