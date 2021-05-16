@@ -37,6 +37,11 @@ def loser_human():
     return resp
 
 @app.route("/win")
+def open_end():
+    resp = render_template("open-ended.html")
+    return resp
+
+@app.route("/winner")
 def winner():
     resp = render_template("win.html")
     return resp

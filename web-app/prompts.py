@@ -131,4 +131,9 @@ starterPrompts = {                             # Yes: Effect on Animals, Humans;
                 suit. 'You must increase the supply of bones to 
                 the canine district!!' he cries. Will you do
                 so?""":                                           [(2,-2),(-2,1),'/static/wegmandog.jpg'],
+            """A movement has been gaining popularity calling
+                for the atonement of atrocities commited towards 
+                animals over prior centuries. Will you financially
+                support this movement by raising taxes to provide
+                better animal benefits?""":                       [(4,-3),(-3,0),'/static/banksydog.jpg'],
 }
